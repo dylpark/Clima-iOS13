@@ -6,6 +6,11 @@
 //  Copyright © 2021 App Brewery. All rights reserved.
 //
 
+//dc0eafc0a74a0a9c31f95f5f09246ebd
+
+//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+//api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid={API key}
+
 import UIKit
 
 class WeatherViewController: UIViewController, UITextFieldDelegate {
