@@ -17,7 +17,6 @@ struct WeatherModel {
         return String(format: "%.1f", temperature)
     }
     
-    //Computed Property
     var conditionName: String {
         switch conditionId {
         case 200...232:
