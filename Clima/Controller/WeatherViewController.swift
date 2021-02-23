@@ -5,7 +5,6 @@
 //  Created by Dylan Park on 12/02/21.
 //  Copyright © 2021 App Brewery. All rights reserved.
 //
-//
 
 import UIKit
 
@@ -27,12 +26,10 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
 
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
-        print(searchTextField.text!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
-        print(searchTextField.text!)
         return true
     }
     
@@ -50,12 +47,18 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         if let city = searchTextField.text {
             weatherManager.fetchWeather(cityName: city)
         }
-        //Use searchTextField.text to get the weather for the city.
+        
         searchTextField.text = ""
+        
     }
     
-    func didUpdateWeather(weather: WeatherModel) {
-        print(weather.temperature)
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        temperatureLabel.text = weather.temperatureString
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
     }
 
 }
