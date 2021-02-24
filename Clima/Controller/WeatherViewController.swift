@@ -30,7 +30,6 @@ class WeatherViewController: UIViewController {
         searchTextField.delegate = self
     }
 
-
 }
 
 //MARK: - UITextFieldDelegate
@@ -104,4 +103,3 @@ extension WeatherViewController: CLLocationManagerDelegate {
         print(error)
     }
 }
-
